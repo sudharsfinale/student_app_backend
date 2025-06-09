@@ -13,11 +13,23 @@ db.prepare(`
 `).run();
 db.prepare(`
   CREATE TABLE IF NOT EXISTS students (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    age INTEGER,
-    grade TEXT,
-    userId INTEGER NOT NULL
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  schoolName TEXT,
+  bloodGroup TEXT,
+  fatherName TEXT,
+  motherName TEXT,
+  parentContact TEXT,
+  addressOne TEXT,
+  addressTwo TEXT,
+  city TEXT,
+  state TEXT,
+  zip TEXT,
+  emergencyContact TEXT,
+  grade TEXT,
+  userId INTEGER NOT NULL,
+  location TEXT,
+  imageURL TEXT
 )
 `).run();
 
