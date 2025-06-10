@@ -2,7 +2,8 @@ const db = require("../db");
 
 const createStudent = (req, res) => {
   const userId = req.user?.id;
-
+  console.log("Incoming request body", JSON.stringify(req.body, null , 2))
+  console.log("Incoming request user", JSON.stringify(req.user, null , 2))
   if (!userId) {
     return res.status(401).json({ message: 'Unauthorized' });
   }
@@ -50,6 +51,7 @@ const createStudent = (req, res) => {
 
     return res.status(201).json({ id: result.lastInsertRowid, ...filteredData });
   } catch (err) {
+    console.log("Error creating student", err)
     return res.status(500).json({ message: 'Error creating student', error: err.message });
   }
 };
